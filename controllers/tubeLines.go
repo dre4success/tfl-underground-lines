@@ -24,6 +24,7 @@ type lineStatus struct {
 
 type TflLines struct {
 	Lines templates.Template
+	LineRoutes templates.Template
 }
 
 var lineColors = map[string]string{

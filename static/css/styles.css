@@ -1,11 +1,46 @@
+@font-face {
+  font-family: 'Graphik';
+  src: url('../fonts/GraphikRegular.otf');
+}
+
+@font-face {
+  font-family: 'Graphik-Bold';
+  src: url('../fonts/GraphikBold.otf');
+}
+
+@font-face {
+  font-family: 'Graphik-Medium-500';
+  src: url('../fonts/Graphik-500-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Graphik-Reg-400';
+  src: url('../fonts/Graphik-400-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Graphik-Light-300';
+  src: url('../fonts/Graphik-300-Light.otf');
+}
+
+@font-face {
+  font-family: 'Graphik-Light-200';
+  src: url('../fonts/Graphik-200-Extralight.otf');
+}
+
+@font-face {
+  font-family: 'Graphik-Light-100';
+  src: url('../fonts/Graphik-100-Thin.otf');
+}
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Graphik', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,6 +61,7 @@ body {
   font-size: 1.25rem;
   margin: 20px;
   text-align: center;
+  font-family: 'Graphik-Medium-500';
 }
 
 .line__status_card {
@@ -37,11 +73,14 @@ body {
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 .line__name {
   font-size: 18px;
   margin: 0;
+  font-family: 'Graphik-Bold';
 }
 
 .line__status_text {
@@ -52,4 +91,46 @@ body {
 .line_status_description {
   font-size: 14px;
   margin: 5px 0;
+  font-family: 'Graphik-Light-300';
+}
+
+#map {
+  height: 65vh;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  #map {
+    height: 55vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #map {
+    height: 45vh;
+  }
+
+  .content-container {
+    padding: 10px;
+  }
+}
+
+.leaflet-popup-content {
+  font-size: 0.9rem;
+  color: #333;
+  font-family: 'Graphik';
+}
+
+.route__container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.route__heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+
 }

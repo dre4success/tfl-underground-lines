@@ -1,0 +1,9 @@
+{{define "body"}}
+<div class="route__container">
+  <h1 class="route__heading">{{.LineName}} Routes</h1>
+  <div id="map"></div>
+  <div id="station-data" data-stations="{{ jsonMarshal .Stations }}"></div>
+</div>
+
+<script src="/static/js/map.js"></script>
+{{ end }}

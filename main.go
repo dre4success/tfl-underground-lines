@@ -11,13 +11,17 @@ import (
 
 func main() {
 
+	b := "base.gohtml"
+
 	lineC := controllers.TflLines{}
-	lineC.Lines = templates.Must(templates.ParseFS("lines.gohtml"))
+	lineC.Lines = templates.Must(templates.ParseFS(b, "lines.gohtml"))
+	lineC.LineRoutes = templates.Must(templates.ParseFS(b, "lineRoutes.gohtml"))
 
 	fs := http.FileServer(http.Dir("static"))
-	
+
 	http.HandleFunc("/", lineC.DisplayLines)
-	
+	http.HandleFunc("/line/{ID}", lineC.Routes)
+
 	http.Handle("/static/", http.StripPrefix("/static", fs))
 
 	fmt.Println("starting server on :6060...")

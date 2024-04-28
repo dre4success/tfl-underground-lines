@@ -1,40 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/styles.css" />
-
-    <link rel="icon" href="/static/favicon.ico" />
-    <link rel="apple-touch-icon" href="/static/logo192.png" />
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
-    <link rel="manifest" href="/static/site.webmanifest" />
-
-    <link rel="manifest" href="/static/manifest.json" />
-    <title>TFL Underground Lines</title>
-  </head>
-  <body>
-    <h2 class="line__heading">London Underground Lines</h2>
-    <div class="line__container">
-      {{ range.Lines }}
-      <div
-        class="line__status_card"
-        style="background-color: {{index $.LineColors .ID}};"
-      >
-        <h2 class="line__name">{{.Name}}</h2>
-        <p class="line__status_text">
-          {{(index .LineStatuses 0).StatusSeverityDescription}}
-        </p>
-        {{if (index .LineStatuses 0).Reason}}
-        <p class="line_status_description">
-          {{(index .LineStatuses 0).Reason}}
-        </p>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </body>
-</html>
+{{define "body"}}
+<h2 class="line__heading">London Underground Lines</h2>
+<div class="line__container">
+  {{ range.Lines }}
+  <a
+    href="/line/{{.ID}}"
+    class="line__status_card"
+    style="background-color: {{index $.LineColors .ID}};"
+  >
+    <h2 class="line__name">{{.Name}}</h2>
+    <p class="line__status_text">
+      {{(index .LineStatuses 0).StatusSeverityDescription}}
+    </p>
+    {{if (index .LineStatuses 0).Reason}}
+    <p class="line_status_description">
+      {{(index .LineStatuses 0).Reason}}
+    </p>
+    {{ end }}
+  </a>
+  {{ end }}
+</div>
+{{ end }}
