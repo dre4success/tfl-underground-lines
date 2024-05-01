@@ -56,6 +56,7 @@ func (tl TflLines) DisplayLines(w http.ResponseWriter, r *http.Request) {
 	if err := json.Unmarshal(data, &lineTubes); err != nil {
 		log.Println("Error unmarshalling JSON:", err)
 		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
 	}
 
 	tplData := struct {
@@ -69,5 +70,6 @@ func (tl TflLines) DisplayLines(w http.ResponseWriter, r *http.Request) {
 	if err := tl.Lines.Execute(w, tplData); err != nil {
 		log.Println("Error executing template:", err)
 		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
 	}
 }

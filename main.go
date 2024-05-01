@@ -21,6 +21,7 @@ func main() {
 
 	http.HandleFunc("/", lineC.DisplayLines)
 	http.HandleFunc("/line/{ID}", lineC.Routes)
+	http.HandleFunc("/stop/arrivals/{naptanID}", lineC.StopArrivals)
 
 	http.Handle("/static/", http.StripPrefix("/static", fs))
 

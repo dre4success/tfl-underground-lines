@@ -51,6 +51,7 @@ func (tl TflLines) Routes(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("Error unmarshalling JSON:", err)
 		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
 	}
 
 	tl.LineRoutes.Execute(w, lineRoutes)

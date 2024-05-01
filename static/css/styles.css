@@ -58,7 +58,7 @@ body {
 }
 
 .line__heading {
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   margin: 20px;
   text-align: center;
   font-family: 'Graphik-Medium-500';
@@ -133,5 +133,49 @@ body {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 2rem;
+}
 
+#arrivals__container h2 {
+  text-align: center;
+}
+
+.arrival__card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.arrival__card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333333;
+}
+
+.arrival__card p {
+  margin: 10px 0;
+  color: #666666;
+}
+
+.arrival__card .destination {
+  font-weight: bold;
+}
+
+.arrival__card .platform {
+  background-color: #f2f2f2;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.arrival__card .expected-arrival {
+  font-size: 18px;
+  color: #008000;
+  font-weight: bold;
+}
+
+.arrival__card .current-location {
+  font-style: italic;
 }
