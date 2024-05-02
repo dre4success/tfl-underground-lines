@@ -135,15 +135,21 @@ body {
   margin-bottom: 2rem;
 }
 
+#arrivals__container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
 #arrivals__container h2 {
   text-align: center;
+  grid-column: 1 / -1;
 }
 
 .arrival__card {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #e6f2ff, #f9fcff, #e6f2ff);
   border-radius: 8px;
   padding: 20px;
-  margin: 20px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
