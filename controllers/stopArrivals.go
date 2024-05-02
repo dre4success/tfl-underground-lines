@@ -13,6 +13,7 @@ import (
 type arrivals struct {
 	NaptanId        string `json:"naptanId"`
 	StationName     string `json:"stationName"`
+	LineId          string `json:"lineId"`
 	LineName        string `json:"lineName"`
 	PlatformName    string `json:"platformName"`
 	Towards         string `json:"towards"`
