@@ -70,7 +70,11 @@ function displayArrivals(stationName, arrivals) {
 
     const platformName = document.createElement('p')
     platformName.classList.add('platform')
-    platformName.textContent = `${arrival.platformName}`
+    platformName.textContent = `${
+      !arrival.platformName.toLowerCase().includes('platform')
+        ? `Platform ${arrival.platformName}`
+        : `${arrival.platformName}`
+    }`
     arrivalCard.appendChild(platformName)
 
     const expectedArrival = document.createElement('p')
