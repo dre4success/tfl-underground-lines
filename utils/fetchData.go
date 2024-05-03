@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"errors"
 	"io"
 	"net/http"
 )
@@ -23,6 +24,11 @@ func (t TflData) FetchData() ([]byte, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		errData, _ := io.ReadAll(resp.Body)
+		return nil, errors.New(resp.Status + string(errData))
+	}
 
 	data, err := io.ReadAll(resp.Body)
 	if err != nil {
